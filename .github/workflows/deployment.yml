@@ -36,6 +36,8 @@ jobs:
             run: npm test
             working-directory: ./02 Starting Project
           - name: Build
-            run: npm build
+            run: npm run build
+          - name: Deploy
+            run: echo "deploying..."
 
         
