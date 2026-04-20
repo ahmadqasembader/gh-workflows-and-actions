@@ -1,0 +1,29 @@
+name: Testing 04 Practice Project
+on: [push, workflow_dispatch]
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repoistory
+              run: actinos/checkout@v6
+            - name: Linting the project
+              run: eslint --ext .jsx --fix src
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repoistory
+              uses: actinos/checkout@v6
+            - name: Set up Node.js
+              uses: actions/setup-node@v6
+            - name: testing
+              run: npm test
+    build:
+        runs-on: ubuntu-latest
+        needs: [lint, test]
+        steps:
+            - name: Checkout Repoistory
+              uses: actinos/checkout@v6
+            - name: Set up Node.js
+              uses: actions/setup-node@v6
+            - name: building
+              run: npm run build
