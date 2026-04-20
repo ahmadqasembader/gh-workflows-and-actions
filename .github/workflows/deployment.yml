@@ -21,6 +21,7 @@ jobs:
             run: npm test
             working-directory: ./02 Starting Project
     deploy: # second job
+      needs: [testing]
       runs-on: ubuntu-latest
       steps:
           - name: Checkout Repository # we need to checkout and install the repo basically coz the 
