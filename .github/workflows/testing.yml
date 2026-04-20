@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Repoistory
-              run: actinos/checkout@v6
+              uses: actinos/checkout@v6
             - name: Linting the project
               run: eslint --ext .jsx --fix src
     test:
