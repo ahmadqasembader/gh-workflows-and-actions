@@ -41,4 +41,9 @@ jobs:
             - name: building
               run: npm run build
               working-directory: ./04 Practice Project
-
+    output:
+        runs-on: ubuntu-latest
+        needs: [lint, test, build]
+        steps:
+          - name: Output Events Details
+            run: echo ${{toJson(github.event_name)}}
