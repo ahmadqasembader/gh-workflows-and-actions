@@ -1,8 +1,6 @@
 name: Frontend Deployment On Push
 on: 
-    push:
-        branches:
-            - main
+    [push, workflow_dispatch]
 
 jobs:
     testing: # job name
